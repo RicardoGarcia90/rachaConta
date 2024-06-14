@@ -10,6 +10,7 @@ export default {
       colors: {
         primary: '#FF3131',
         textColor: '#eaeaea',
+        textColorBlack: '#333',
         backgroundTheme: '#2E2E2E',
       },
       container: {
