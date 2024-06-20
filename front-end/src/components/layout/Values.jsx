@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
 
-const Values = ({ value, onHandleValue }) => {
+const Values = ({ value, onHandleValue, showValue }) => {
   const [currentValue, setCurrentValue] = useState('');
   const [isValid, setIsValid] = useState(false);
   const [isTouched, setIsTouched] = useState(false);
-  const [showValue, setShowValue] = useState(false);
 
   useEffect(() => {
     if (isTouched) {
@@ -22,7 +21,6 @@ const Values = ({ value, onHandleValue }) => {
     setIsValid(validatevalue);
 
     if (validatevalue) {
-      setShowValue(true);
       const valueInput = currentValue;
 
       onHandleValue(valueInput);

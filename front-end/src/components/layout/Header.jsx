@@ -1,5 +1,5 @@
 import React from 'react';
-import logoRachaConta from '../assets/LogoRachaConta.svg';
+import logoRachaConta from '../../assets/LogoRachaConta.svg';
 
 const Header = () => {
   return (

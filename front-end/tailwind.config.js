@@ -12,6 +12,7 @@ export default {
         textColor: '#eaeaea',
         textColorBlack: '#333',
         backgroundTheme: '#2E2E2E',
+        backgroundCardFriend: '#fff',
       },
       container: {
         center: true,
