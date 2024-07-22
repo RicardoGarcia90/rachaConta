@@ -3,6 +3,7 @@ import Header from './components/layout/Header';
 import Values from './components/layout/Values';
 import SelectDivisionType from './components/layout/SelectDivisionType';
 import FriendsList from './components/layout/FriendsList';
+import AddFriendForm from './components/layout/AddFriendForm';
 
 const initialFriends = [
   {
@@ -49,6 +50,7 @@ function App() {
         />
         {showValue && <SelectDivisionType />}
         <FriendsList friends={friends} />
+        <AddFriendForm />
       </div>
     </div>
   );

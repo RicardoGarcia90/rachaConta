@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import ButtonAdd from '../common/ButtonAdd';
 
 const Values = ({ value, onHandleValue, showValue }) => {
   const [currentValue, setCurrentValue] = useState('');
@@ -28,6 +29,12 @@ const Values = ({ value, onHandleValue, showValue }) => {
     setCurrentValue('');
   }
 
+  function handleKeyDown(e) {
+    if (e.key === 'Enter') {
+      handleValue();
+    }
+  }
+
   let message;
   if (isTouched && !isValid) {
     message = 'Digite um valor válido!';
@@ -37,7 +44,7 @@ const Values = ({ value, onHandleValue, showValue }) => {
     <>
       <div className="container flex gap-2 items-center justify-around text-textColor font-bold">
         <div className="flex flex-col items-center gap-2">
-          <div>
+          <div className="flex">
             <form onSubmit={handleValue}>
               <input
                 type="text"
@@ -49,9 +56,9 @@ const Values = ({ value, onHandleValue, showValue }) => {
                 }}
                 className="w-32 h-8 pl-1 rounded-md text-sm mr-1 text-textColorBlack"
               />
-              <button className="bg-green-500 px-2 rounded-full text-xl">
+              <ButtonAdd style={'btnAddValue'} onClick={handleValue}>
                 +
-              </button>
+              </ButtonAdd>
             </form>
           </div>
           <div>

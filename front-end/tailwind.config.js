@@ -13,6 +13,7 @@ export default {
         textColorBlack: '#333',
         backgroundTheme: '#2E2E2E',
         backgroundCardFriend: '#fff',
+        bgButtonGreen: '',
       },
       container: {
         center: true,
