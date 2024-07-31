@@ -40,7 +40,7 @@ function App() {
   }
 
   return (
-    <div className="container h-screen bg-backgroundTheme font-quicksand flex justify-center items-start">
+    <div className="container h-full bg-backgroundTheme font-quicksand flex justify-center items-start">
       <div>
         <Header />
         <Values

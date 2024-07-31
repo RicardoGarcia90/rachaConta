@@ -45,7 +45,7 @@ const Values = ({ value, onHandleValue, showValue }) => {
       <div className="container flex gap-2 items-center justify-around text-textColor font-bold">
         <div className="flex flex-col items-center gap-2">
           <div className="flex">
-            <form onSubmit={handleValue}>
+            <form onSubmit={handleValue} className="flex">
               <input
                 type="text"
                 value={currentValue}
