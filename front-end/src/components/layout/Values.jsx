@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import { FaTrashAlt } from 'react-icons/fa';
 import ButtonAdd from '../common/ButtonAdd';
+import ButtonClear from '../common/ButtonClear';
 
 const Values = ({ value, onHandleValue, showValue }) => {
   const [currentValue, setCurrentValue] = useState('');
@@ -29,6 +31,10 @@ const Values = ({ value, onHandleValue, showValue }) => {
     setCurrentValue('');
   }
 
+  function handleClearValue() {
+    onHandleValue('');
+  }
+
   function handleKeyDown(e) {
     if (e.key === 'Enter') {
       handleValue();
@@ -45,7 +51,7 @@ const Values = ({ value, onHandleValue, showValue }) => {
       <div className="container flex gap-2 items-center justify-around text-textColor font-bold">
         <div className="flex flex-col items-center gap-2">
           <div className="flex">
-            <form onSubmit={handleValue} className="flex">
+            <form onSubmit={handleValue} className="flex items-center">
               <input
                 type="text"
                 value={currentValue}
@@ -59,6 +65,9 @@ const Values = ({ value, onHandleValue, showValue }) => {
               <ButtonAdd style={'btnAddValue'} onClick={handleValue}>
                 +
               </ButtonAdd>
+              <ButtonClear style={'btnClearValue'} onClick={handleClearValue}>
+                <FaTrashAlt className="ml-1" />
+              </ButtonClear>
             </form>
           </div>
           <div>
@@ -70,11 +79,6 @@ const Values = ({ value, onHandleValue, showValue }) => {
 
             <p className="text-sm text-primary underline">{message}</p>
           </div>
-        </div>
-
-        <div className="flex flex-col items-center">
-          <p>Restante</p>
-          <p>R$ {value}</p>
         </div>
       </div>
     </>

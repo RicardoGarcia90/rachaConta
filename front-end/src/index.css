@@ -6,4 +6,8 @@
   .btnAddValue {
     @apply bg-green-500 px-2 rounded-full text-2xl text-textColor;
   }
+
+  .btnClearValue {
+    @apply text-xl text-textColor hover:text-red-500;
+  }
 }
