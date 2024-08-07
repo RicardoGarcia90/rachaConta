@@ -24,7 +24,7 @@ const initialFriends = [
   {
     id: 4,
     name: 'Cosmo Golden',
-    valor: 15,
+    valor: 10,
   },
 ];
 
@@ -39,8 +39,12 @@ function App() {
     setShowValue(true);
   }
 
+  function addFriends(friend) {
+    setFriends((friends) => [...friends, friend]);
+  }
+
   return (
-    <div className="container h-full bg-backgroundTheme font-quicksand flex justify-center items-start">
+    <div className="container h-auto bg-backgroundTheme font-quicksand flex justify-center items-start">
       <div>
         <Header />
         <Values
@@ -50,7 +54,7 @@ function App() {
         />
         {showValue && <SelectDivisionType />}
         <FriendsList friends={friends} />
-        <AddFriendForm />
+        <AddFriendForm onAddFriends={addFriends} />
       </div>
     </div>
   );
