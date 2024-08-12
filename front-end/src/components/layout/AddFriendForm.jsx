@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import ButtonAdd from '../common/ButtonAdd';
+import ButtonHandle from '../common/ButtonHandle';
 
 const AddFriendForm = ({ onAddFriends }) => {
   const [name, setName] = useState('');
@@ -7,7 +7,7 @@ const AddFriendForm = ({ onAddFriends }) => {
   function handleSubmit(e) {
     e.preventDefault();
 
-    if (!name) return;
+    if (name.trim() === '') return;
 
     const id = crypto.randomUUID();
 
@@ -19,7 +19,7 @@ const AddFriendForm = ({ onAddFriends }) => {
 
     onAddFriends(newFriend);
 
-    setName(' ');
+    setName('');
   }
 
   return (
@@ -34,9 +34,9 @@ const AddFriendForm = ({ onAddFriends }) => {
           onChange={(e) => setName(e.target.value)}
           className="py-1 px-4"
         />
-        <ButtonAdd style={'btnAddValue'} onClick={handleSubmit}>
+        <ButtonHandle style={'btnAddValue'} type="submit">
           +
-        </ButtonAdd>
+        </ButtonHandle>
       </form>
     </div>
   );

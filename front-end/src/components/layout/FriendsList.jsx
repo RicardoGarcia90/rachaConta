@@ -1,7 +1,7 @@
 import React from 'react';
 import Friend from './Friend';
 
-const FriendsList = ({ friends, valor }) => {
+const FriendsList = ({ friends, valor, onRemoveFriend }) => {
   if (friends.length < 1)
     return <p className="text-white text-center">Nenhum amigo adicionado</p>;
 
@@ -18,6 +18,8 @@ const FriendsList = ({ friends, valor }) => {
               friend={friend}
               key={friend.id}
               valor={valor}
+              onRemoveFriend={onRemoveFriend}
+              id={friend.id}
             />
           ))}
         </ul>

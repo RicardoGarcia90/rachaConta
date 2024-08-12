@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { FaTrashAlt } from 'react-icons/fa';
-import ButtonAdd from '../common/ButtonAdd';
-import ButtonClear from '../common/ButtonClear';
+import ButtonHandle from '../common/ButtonHandle';
 
 const Values = ({ value, onHandleValue, showValue }) => {
   const [currentValue, setCurrentValue] = useState('');
@@ -62,12 +61,12 @@ const Values = ({ value, onHandleValue, showValue }) => {
                 }}
                 className="w-32 h-8 pl-1 rounded-md text-sm mr-1 text-textColorBlack"
               />
-              <ButtonAdd style={'btnAddValue'} onClick={handleValue}>
+              <ButtonHandle style={'btnAddValue'} onClick={handleValue}>
                 +
-              </ButtonAdd>
-              <ButtonClear style={'btnClearValue'} onClick={handleClearValue}>
+              </ButtonHandle>
+              <ButtonHandle style={'btnClearValue'} onClick={handleClearValue}>
                 <FaTrashAlt className="ml-1" />
-              </ButtonClear>
+              </ButtonHandle>
             </form>
           </div>
           <div>

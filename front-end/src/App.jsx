@@ -19,6 +19,10 @@ function App() {
     setFriends((friends) => [...friends, friend]);
   }
 
+  function removeFriends(id) {
+    setFriends((friends) => friends.filter((friend) => friend.id !== id));
+  }
+
   return (
     <div className="container h-screen bg-backgroundTheme font-quicksand flex justify-center items-start">
       <div>
@@ -29,10 +33,12 @@ function App() {
           onHandleValue={handleValue}
         />
         {showValue}
-        <FriendsList friends={friends} valor={value} />
+        <FriendsList
+          friends={friends}
+          valor={value}
+          onRemoveFriend={removeFriends}
+        />
         <AddFriendForm onAddFriends={addFriends} />
-
-        <p className="text-center text-white">CRIAR EXCLUIR AMIGO</p>
       </div>
     </div>
   );
